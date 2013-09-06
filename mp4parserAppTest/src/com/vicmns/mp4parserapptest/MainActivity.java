@@ -66,7 +66,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		videosToMerge.add("vid_demo_3.mp4");
 		
 		//Set the working path
-		this.workingPath = Environment.getExternalStorageDirectory() + "/DemoMerge";
+		this.workingPath = Environment.getExternalStorageDirectory() + "/com.vicmns.mp4parserapptest";
 		
 		initializeObjects();
 		setOnClickListeners();
@@ -186,7 +186,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				long timestamp=new Date().getTime();
 				String timestampS="" + timestamp;
 				
-				File storagePath = new File(Environment.getExternalStorageDirectory() + "/DemoMerge/");             
+				File storagePath = new File(workingPath);             
 				storagePath.mkdirs();  
 				
 				File myMovie = new File(storagePath, String.format("output-%s.mp4", timestampS)); 
@@ -314,7 +314,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				
 				IsoFile out = new DefaultMp4Builder().build(movie);        
 				
-				File storagePath = new File(Environment.getExternalStorageDirectory() + "/DemoMerge/");             
+				File storagePath = new File(workingPath);             
 				storagePath.mkdirs();       
 				
 				long timestamp=new Date().getTime();
